@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Spool{% endblock %}
+
+{% block body %}
+    <h1>Edit Spool</h1>
+
+    {{ include('spool/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_spool_index') }}">back to list</a>
+
+    {{ include('spool/_delete_form.html.twig') }}
+{% endblock %}

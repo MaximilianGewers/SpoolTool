@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Spool index{% endblock %}
+
+{% block body %}
+    <h1>Spool index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Color</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for spool in spools %}
+            <tr>
+                <td>{{ spool.id }}</td>
+                <td>{{ spool.color }}</td>
+                <td>
+                    <a href="{{ path('app_spool_show', {'id': spool.id}) }}">show</a>
+                    <a href="{{ path('app_spool_edit', {'id': spool.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_spool_new') }}">Create new</a>
+{% endblock %}

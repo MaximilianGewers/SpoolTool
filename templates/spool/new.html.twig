@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Spool{% endblock %}
+
+{% block body %}
+    <h1>Create new Spool</h1>
+
+    {{ include('spool/_form.html.twig') }}
+
+    <a href="{{ path('app_spool_index') }}">back to list</a>
+{% endblock %}
