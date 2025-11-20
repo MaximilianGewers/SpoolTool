@@ -19,6 +19,9 @@ class Spool
     #[ORM\ManyToOne(inversedBy: 'spools')]
     private ?SpoolBrand $spoolBrand = null;
 
+    #[ORM\Column(options: ['default' => 0.0])]
+    private ?float $grams = 0.0;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Spool
     public function setSpoolBrand(?SpoolBrand $spoolBrand): static
     {
         $this->spoolBrand = $spoolBrand;
+
+        return $this;
+    }
+
+    public function getGrams(): ?float
+    {
+        return $this->grams;
+    }
+
+    public function setGrams(float $grams): static
+    {
+        $this->grams = $grams;
 
         return $this;
     }

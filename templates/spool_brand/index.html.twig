@@ -3,35 +3,43 @@
 {% block title %}SpoolBrand index{% endblock %}
 
 {% block body %}
-    <h1>SpoolBrand index</h1>
+    <div class="flex items-start justify-between mb-6">
+        <div>
+            <h1 class="text-2xl font-semibold text-gray-900">Spool brands</h1>
+            <p class="text-sm text-gray-600 mt-1">Manage spool brands available in your library.</p>
+        </div>
+        <twig:Button label="Create new" href="{{ path('app_spool_brand_new') }}" variant="primary" />
+    </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Note</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for spool_brand in spool_brands %}
-            <tr>
-                <td>{{ spool_brand.id }}</td>
-                <td>{{ spool_brand.name }}</td>
-                <td>{{ spool_brand.note }}</td>
-                <td>
-                    <a href="{{ path('app_spool_brand_show', {'id': spool_brand.id}) }}">show</a>
-                    <a href="{{ path('app_spool_brand_edit', {'id': spool_brand.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_spool_brand_new') }}">Create new</a>
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wide">Id</th>
+                    <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wide">Name</th>
+                    <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wide">Note</th>
+                    <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wide">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+            {% for spool_brand in spool_brands %}
+                <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3 text-sm text-gray-900">{{ spool_brand.id }}</td>
+                    <td class="px-4 py-3 text-sm text-gray-900">{{ spool_brand.name }}</td>
+                    <td class="px-4 py-3 text-sm text-gray-700">{{ spool_brand.note }}</td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-2">
+                            <twig:Button label="Show" href="{{ path('app_spool_brand_show', {'id': spool_brand.id}) }}" variant="primary" />
+                            <twig:Button label="Edit" href="{{ path('app_spool_brand_edit', {'id': spool_brand.id}) }}" variant="secondary" />
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4" class="px-4 py-6 text-center text-sm text-gray-600">No spool brands found.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

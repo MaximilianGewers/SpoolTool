@@ -3,28 +3,37 @@
 {% block title %}SpoolBrand{% endblock %}
 
 {% block body %}
-    <h1>SpoolBrand</h1>
+    <div class="flex items-start justify-between mb-6">
+        <div>
+            <h1 class="text-2xl font-semibold text-gray-900">Spool brand details</h1>
+            <p class="text-sm text-gray-600 mt-1">View details for this spool brand.</p>
+        </div>
+        <div class="flex items-center gap-2">
+            <twig:Button label="Edit" href="{{ path('app_spool_brand_edit', {'id': spool_brand.id}) }}" variant="primary" />
+            <twig:Button label="Back to list" href="{{ path('app_spool_brand_index') }}" variant="secondary" />
+        </div>
+    </div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ spool_brand.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ spool_brand.name }}</td>
-            </tr>
-            <tr>
-                <th>Note</th>
-                <td>{{ spool_brand.note }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+        <table class="min-w-full divide-y divide-gray-200">
+            <tbody class="divide-y divide-gray-200">
+                <tr>
+                    <th class="w-40 px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wide">Id</th>
+                    <td class="px-4 py-3 text-sm text-gray-900">{{ spool_brand.id }}</td>
+                </tr>
+                <tr>
+                    <th class="w-40 px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wide">Name</th>
+                    <td class="px-4 py-3 text-sm text-gray-900">{{ spool_brand.name }}</td>
+                </tr>
+                <tr>
+                    <th class="w-40 px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wide">Note</th>
+                    <td class="px-4 py-3 text-sm text-gray-700 whitespace-pre-line">{{ spool_brand.note }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <a href="{{ path('app_spool_brand_index') }}">back to list</a>
-
-    <a href="{{ path('app_spool_brand_edit', {'id': spool_brand.id}) }}">edit</a>
-
-    {{ include('spool_brand/_delete_form.html.twig') }}
+    <div class="mt-6">
+        {{ include('spool_brand/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

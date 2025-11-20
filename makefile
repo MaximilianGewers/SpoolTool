@@ -21,8 +21,17 @@ down:
 bash:
 	$(exec) bash
 
+drop-database:
+	$(exec) php bin/console doctrine:database:drop --if-exists --force
+
+create-database:
+	$(exec) php bin/console doctrine:database:create --if-not-exists
+
 migrate-generate:
 	$(exec) php bin/console make:migration
 
 migrate-execute:
 	$(exec) php bin/console doctrine:migrations:migrate --no-interaction
+
+database:
+	make drop-database create-database migrate-execute

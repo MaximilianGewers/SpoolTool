@@ -3,9 +3,15 @@
 {% block title %}New SpoolBrand{% endblock %}
 
 {% block body %}
-    <h1>Create new SpoolBrand</h1>
+    <div class="flex items-start justify-between mb-6">
+        <div>
+            <h1 class="text-2xl font-semibold text-gray-900">Create new spool brand</h1>
+            <p class="text-sm text-gray-600 mt-1">Add a new brand for your spools.</p>
+        </div>
+        <twig:Button label="Back to list" href="{{ path('app_spool_brand_index') }}" variant="secondary" />
+    </div>
 
-    {{ include('spool_brand/_form.html.twig') }}
-
-    <a href="{{ path('app_spool_brand_index') }}">back to list</a>
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
+        {{ include('spool_brand/_form.html.twig') }}
+    </div>
 {% endblock %}

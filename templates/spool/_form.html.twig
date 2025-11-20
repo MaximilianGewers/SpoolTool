@@ -5,6 +5,16 @@
             label_attr: {class: 'block text-sm font-medium text-gray-700'},
             attr: {class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500'}
         }) }}
+        {{ form_row(form.spoolBrand, {
+            row_attr: {class: 'space-y-2'},
+            label_attr: {class: 'block text-sm font-medium text-gray-700'},
+            attr: {class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-white'}
+        }) }}
+        {{ form_row(form.grams, {
+            row_attr: {class: 'space-y-2'},
+            label_attr: {class: 'block text-sm font-medium text-gray-700'},
+            attr: {class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-white'}
+        }) }}
     </div>
     <twig:Button label="{{ button_label|default('Save') }}" type="submit" />
 {{ form_end(form) }}

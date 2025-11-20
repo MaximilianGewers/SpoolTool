@@ -3,11 +3,19 @@
 {% block title %}Edit SpoolBrand{% endblock %}
 
 {% block body %}
-    <h1>Edit SpoolBrand</h1>
+    <div class="flex items-start justify-between mb-6">
+        <div>
+            <h1 class="text-2xl font-semibold text-gray-900">Edit spool brand</h1>
+            <p class="text-sm text-gray-600 mt-1">Update the details for this brand.</p>
+        </div>
+        <twig:Button label="Back to list" href="{{ path('app_spool_brand_index') }}" variant="secondary" />
+    </div>
 
-    {{ include('spool_brand/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 space-y-6">
+        {{ include('spool_brand/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_spool_brand_index') }}">back to list</a>
-
-    {{ include('spool_brand/_delete_form.html.twig') }}
+        <div class="border-t border-gray-200 pt-4">
+            {{ include('spool_brand/_delete_form.html.twig') }}
+        </div>
+    </div>
 {% endblock %}
