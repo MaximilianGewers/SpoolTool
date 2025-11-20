@@ -3,9 +3,17 @@
 {% block title %}New Spool{% endblock %}
 
 {% block body %}
-    <h1>Create new Spool</h1>
+    <div class="flex items-start justify-between mb-6">
+        <div>
+            <h1 class="text-2xl font-semibold text-gray-900">Create new spool</h1>
+            <p class="text-sm text-gray-600 mt-1">Add a new spool color to your collection.</p>
+        </div>
+        <a href="{{ path('app_spool_index') }}" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
+            Back to list
+        </a>
+    </div>
 
-    {{ include('spool/_form.html.twig') }}
-
-    <a href="{{ path('app_spool_index') }}">back to list</a>
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
+        {{ include('spool/_form.html.twig') }}
+    </div>
 {% endblock %}

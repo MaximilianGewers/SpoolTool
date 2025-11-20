@@ -1,4 +1,12 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_start(form, {'attr': {'class': 'space-y-6'}}) }}
+    <div class="space-y-4">
+        {{ form_row(form.color, {
+            row_attr: {class: 'space-y-2'},
+            label_attr: {class: 'block text-sm font-medium text-gray-700'},
+            attr: {class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500'}
+        }) }}
+    </div>
+    <button class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+        {{ button_label|default('Save') }}
+    </button>
 {{ form_end(form) }}

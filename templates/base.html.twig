@@ -12,6 +12,10 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <main class="min-h-screen bg-gray-50 text-gray-900">
+            <div class="max-w-5xl mx-auto p-6">
+                {% block body %}{% endblock %}
+            </div>
+        </main>
     </body>
 </html>
