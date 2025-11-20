@@ -7,7 +7,7 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 #[AsTwigComponent]
 final class Button
 {
-    public ?string $label = null;
+    public string $label;
 
     public ?string $href = null;
 

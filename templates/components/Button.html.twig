@@ -11,10 +11,10 @@
 
 {% if href %}
     <a href="{{ href }}" {{ attrs.without('type') }}>
-        {{ content|default(label|default('')) }}
+        {{ label }}
     </a>
 {% else %}
     <button type="{{ type|default('button') }}" {{ attrs }}>
-        {{ content|default(label|default('')) }}
+        {{ label }}
     </button>
 {% endif %}

@@ -8,9 +8,7 @@
             <h1 class="text-2xl font-semibold text-gray-900">Edit spool</h1>
             <p class="text-sm text-gray-600 mt-1">Update the color or details for this spool.</p>
         </div>
-        <a href="{{ path('app_spool_index') }}" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
-            Back to list
-        </a>
+        <twig:Button label="Back to list" href="{{ path('app_spool_index') }}" variant="secondary" />
     </div>
 
     <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 space-y-6">
