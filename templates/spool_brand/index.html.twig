@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SpoolBrand index{% endblock %}
+
+{% block body %}
+    <h1>SpoolBrand index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Note</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for spool_brand in spool_brands %}
+            <tr>
+                <td>{{ spool_brand.id }}</td>
+                <td>{{ spool_brand.name }}</td>
+                <td>{{ spool_brand.note }}</td>
+                <td>
+                    <a href="{{ path('app_spool_brand_show', {'id': spool_brand.id}) }}">show</a>
+                    <a href="{{ path('app_spool_brand_edit', {'id': spool_brand.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_spool_brand_new') }}">Create new</a>
+{% endblock %}

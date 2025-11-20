@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SpoolBrand{% endblock %}
+
+{% block body %}
+    <h1>SpoolBrand</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ spool_brand.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ spool_brand.name }}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ spool_brand.note }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_spool_brand_index') }}">back to list</a>
+
+    <a href="{{ path('app_spool_brand_edit', {'id': spool_brand.id}) }}">edit</a>
+
+    {{ include('spool_brand/_delete_form.html.twig') }}
+{% endblock %}

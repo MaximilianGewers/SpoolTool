@@ -16,6 +16,9 @@ class Spool
     #[ORM\Column(length: 7)]
     private ?string $color = null;
 
+    #[ORM\ManyToOne(inversedBy: 'spools')]
+    private ?SpoolBrand $spoolBrand = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -29,6 +32,18 @@ class Spool
     public function setColor(string $color): static
     {
         $this->color = $color;
+
+        return $this;
+    }
+
+    public function getSpoolBrand(): ?SpoolBrand
+    {
+        return $this->spoolBrand;
+    }
+
+    public function setSpoolBrand(?SpoolBrand $spoolBrand): static
+    {
+        $this->spoolBrand = $spoolBrand;
 
         return $this;
     }
