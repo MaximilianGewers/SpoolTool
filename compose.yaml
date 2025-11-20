@@ -1,19 +1,5 @@
 
 services:
-  php:
-    build:
-      context: .
-      dockerfile: docker/php.dockerfile
-      args:
-        - version=${PHP_TAG}
-    command: symfony server:start --port=8080 --allow-all-ip
-    ports:
-      - "8080:8080"
-    depends_on:
-      - database
-    volumes:
-      - .:/var/www/html/
-
 ###> doctrine/doctrine-bundle ###
   database:
     image: postgres:${POSTGRES_VERSION:-16}-alpine
