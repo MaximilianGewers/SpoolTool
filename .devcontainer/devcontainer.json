@@ -1,0 +1,20 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/shyim/devcontainers-features/symfony-cli:0": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"whatwedo.twig",
+				"TheNouillet.symfony-vscode",
+				"DEVSENSE.phptools-vscode",
+				"bradlc.vscode-tailwindcss",
+				"ms-vscode.makefile-tools",
+				"openai.chatgpt"
+			]
+		}
+	}
+}
